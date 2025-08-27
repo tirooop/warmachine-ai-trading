@@ -2,6 +2,7 @@
 
 A sophisticated AI-powered options trading system with genetic algorithm-based strategy evolution, real-time risk monitoring, and comprehensive trading execution capabilities.
 
+<<<<<<< HEAD
 ![WarMachine AI Trading](https://via.placeholder.com/800x400.png?text=WarMachine+AI+Trading+System)
 
 ## 🌟 Key Features
@@ -249,3 +250,39 @@ Thanks to all developers and researchers who contributed to this project.
 ---
 
 **⭐ If this project helps you, please give us a star!** 
+=======
+## 🌟 Key Features
+
+- **Genetic Algorithm Optimization**: Advanced strategy evolution using genetic algorithms
+- **Real-time Risk Monitoring**: Continuous risk assessment and alerting
+- **Web Dashboard**: Real-time monitoring and control interface
+- **Telegram Bot**: Mobile notifications and remote control
+- **High-Frequency Execution**: Sub-millisecond trade execution
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/yourusername/warmachine-ai-trading.git
+cd warmachine-ai-trading
+pip install -r requirements.txt
+python run_warmachine.py
+```
+
+## 🛠️ Tech Stack
+
+- Python 3.8+, FastAPI, WebSocket
+- TensorFlow, PyTorch, Genetic Algorithms
+- PostgreSQL, Redis
+- Web Dashboard, Telegram Bot
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## ⚠️ Disclaimer
+
+This software is for educational and research purposes only. Do not risk money you cannot afford to lose.
+```
+
+---
+>>>>>>> 8a14ff0e66f8aec37aa13e1157da509f9f408052
