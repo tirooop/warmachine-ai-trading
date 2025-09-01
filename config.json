@@ -1,0 +1,262 @@
+{
+    "version": "1.2.0",
+    "name": "WarMachine AI Trading System",
+    "description": "AI-powered options trading system with genetic algorithm-based strategy evolution",
+    "environment": "production",
+    "debug": false,
+    "api": {
+        "host": "0.0.0.0",
+        "port": 8000,
+        "cors_origins": ["http://localhost:3000", "https://yourdomain.com"],
+        "rate_limit": {
+            "requests_per_minute": 100,
+            "burst_size": 20
+        }
+    },
+    "database": {
+        "type": "postgresql",
+        "host": "localhost",
+        "port": 5432,
+        "name": "warmachine",
+        "username": "YOUR_DB_USERNAME",
+        "password": "YOUR_DB_PASSWORD",
+        "pool_size": 10,
+        "max_overflow": 20
+    },
+    "redis": {
+        "host": "localhost",
+        "port": 6379,
+        "password": "YOUR_REDIS_PASSWORD",
+        "db": 0,
+        "max_connections": 20
+    },
+    "data_providers": {
+        "polygon": {
+            "enabled": true,
+            "api_key": "YOUR_POLYGON_API_KEY",
+            "base_url": "https://api.polygon.io",
+            "rate_limit": 5
+        },
+        "tradier": {
+            "enabled": true,
+            "api_key": "YOUR_TRADIER_API_KEY",
+            "base_url": "https://sandbox.tradier.com",
+            "account_id": "YOUR_ACCOUNT_ID"
+        },
+        "binance": {
+            "enabled": true,
+            "api_key": "YOUR_BINANCE_API_KEY",
+            "secret_key": "YOUR_BINANCE_SECRET_KEY",
+            "testnet": false
+        },
+        "ibkr": {
+            "enabled": true,
+            "host": "127.0.0.1",
+            "port": 7496,
+            "client_id": 1,
+            "timeout": 20
+        },
+        "databento": {
+            "enabled": true,
+            "api_key": "YOUR_DATABENTO_API_KEY"
+        },
+        "google_finance": {
+            "enabled": true,
+            "base_url": "https://finance.google.com"
+        },
+        "alpha_vantage": {
+            "enabled": true,
+            "api_key": "YOUR_ALPHA_VANTAGE_API_KEY",
+            "base_url": "https://www.alphavantage.co"
+        },
+        "finnhub": {
+            "enabled": true,
+            "api_key": "YOUR_FINNHUB_API_KEY",
+            "base_url": "https://finnhub.io"
+        },
+        "yahoo_finance": {
+            "enabled": true,
+            "base_url": "https://query1.finance.yahoo.com"
+        }
+    },
+    "ai": {
+        "openai": {
+            "enabled": true,
+            "api_key": "YOUR_OPENAI_API_KEY",
+            "model": "gpt-4",
+            "max_tokens": 2000,
+            "temperature": 0.7
+        },
+        "deepseek": {
+            "enabled": true,
+            "api_key": "YOUR_DEEPSEEK_API_KEY",
+            "model": "deepseek-chat",
+            "max_tokens": 2000,
+            "temperature": 0.7
+        },
+        "claude": {
+            "enabled": true,
+            "api_key": "YOUR_CLAUDE_API_KEY",
+            "model": "claude-3-sonnet-20240229",
+            "max_tokens": 2000,
+            "temperature": 0.7
+        }
+    },
+    "telegram": {
+        "enabled": true,
+        "bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+        "chat_id": "YOUR_CHAT_ID",
+        "webhook_url": "https://yourdomain.com/webhook/telegram",
+        "commands": {
+            "start": "Start the trading system",
+            "status": "Get system status",
+            "portfolio": "View portfolio",
+            "backtest": "Run backtest",
+            "alert": "Create alert",
+            "optimize": "Optimize strategy",
+            "deploy": "Deploy strategy"
+        }
+    },
+    "notifications": {
+        "discord": {
+            "enabled": true,
+            "bot_name": "ModleWAI",
+            "application_id": "YOUR_DISCORD_APP_ID",
+            "public_key": "YOUR_DISCORD_PUBLIC_KEY",
+            "token": "YOUR_DISCORD_BOT_TOKEN",
+            "command_prefix": "/",
+            "webhook_port": 8080
+        },
+        "feishu": {
+            "enabled": true,
+            "webhook_url": "YOUR_FEISHU_WEBHOOK_URL"
+        },
+        "email": {
+            "enabled": true,
+            "smtp_server": "smtp.gmail.com",
+            "smtp_port": 587,
+            "username": "YOUR_EMAIL",
+            "password": "YOUR_APP_PASSWORD",
+            "from_address": "YOUR_EMAIL",
+            "to_addresses": ["YOUR_EMAIL"]
+        }
+    },
+    "components": {
+        "market_data_hub": {
+            "enabled": true,
+            "cache_expiry": 3600,
+            "default_order_book_depth": 10,
+            "data_types": ["price", "volume", "order_book", "option_chain"],
+            "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"]
+        },
+        "liquidity_sniper": {
+            "enabled": true,
+            "min_order_value": 500000,
+            "threshold_multiplier": 2.5,
+            "detection_window": 60,
+            "volume_threshold": 1.5,
+            "imbalance_threshold": 0.3
+        },
+        "order_flow_monitor": {
+            "enabled": true,
+            "detection_window": 60,
+            "min_order_size": 100,
+            "track_imbalances": true,
+            "alert_threshold": 0.2
+        },
+        "ai_analyzer": {
+            "enabled": true,
+            "analysis_interval": 300,
+            "min_confidence": 0.7,
+            "lookback_periods": 100,
+            "signal_weights": {
+                "trend": 0.4,
+                "momentum": 0.3,
+                "volatility": 0.2,
+                "volume": 0.1
+            }
+        }
+    },
+    "risk_management": {
+        "max_position_size": 0.1,
+        "max_total_risk": 0.2,
+        "stop_loss": 0.02,
+        "take_profit": 0.05,
+        "max_daily_trades": 50,
+        "max_open_positions": 10
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        "file": "warmachine.log",
+        "max_size": 10485760,
+        "backup_count": 5,
+        "console_output": true
+    },
+    "performance": {
+        "connection_pool_size": 10,
+        "cache_size": 1000,
+        "cache_ttl": 300,
+        "max_workers": 4,
+        "queue_size": 1000
+    },
+    "voice": {
+        "enabled": true,
+        "tts_engine": "edge-tts",
+        "voice_settings": {
+            "default": {
+                "voice": "en-US-JennyNeural",
+                "rate": "+0%",
+                "volume": "+0%"
+            },
+            "market": {
+                "voice": "en-US-GuyNeural",
+                "rate": "+10%",
+                "volume": "+0%"
+            },
+            "alert": {
+                "voice": "en-US-AriaNeural",
+                "rate": "+15%",
+                "volume": "+10%"
+            }
+        }
+    },
+    "security": {
+        "jwt_secret": "YOUR_JWT_SECRET_KEY",
+        "encryption_key": "YOUR_ENCRYPTION_KEY",
+        "session_timeout": 3600,
+        "max_login_attempts": 5,
+        "lockout_duration": 900
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_interval": 60,
+        "health_check_interval": 30,
+        "alert_thresholds": {
+            "cpu_usage": 80,
+            "memory_usage": 85,
+            "disk_usage": 90,
+            "error_rate": 5
+        }
+    },
+    "backup": {
+        "enabled": true,
+        "schedule": "daily",
+        "retention_days": 30,
+        "storage_path": "./backups"
+    },
+    "ssl": {
+        "enabled": false,
+        "cert_file": "path/to/cert.pem",
+        "key_file": "path/to/key.pem"
+    },
+    "access_control": {
+        "enabled": true,
+        "allowed_ips": ["127.0.0.1", "::1"],
+        "admin_users": ["admin@example.com"],
+        "rate_limiting": {
+            "requests_per_minute": 60,
+            "burst_size": 10
+        }
+    }
+} 
