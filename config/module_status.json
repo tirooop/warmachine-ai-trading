@@ -1,0 +1,269 @@
+{
+    "market_data": {
+        "market_data_hub.py": {
+            "status": "stable",
+            "description": "Central market data aggregation and distribution",
+            "dependencies": ["connectors/"]
+        },
+        "google_finance_data.py": {
+            "status": "stable",
+            "description": "Google Finance data integration",
+            "dependencies": ["datafeeds/googlefinance/"]
+        },
+        "ibkr_historical_data.py": {
+            "status": "stable",
+            "description": "Interactive Brokers historical data integration",
+            "dependencies": ["ib_insync"]
+        },
+        "real_market_connector.py": {
+            "status": "stable",
+            "description": "Real-time market data connector",
+            "dependencies": ["websocket-client", "requests"]
+        },
+        "market_data_watcher.py": {
+            "status": "needs-update",
+            "description": "Market data monitoring and analysis",
+            "dependencies": ["yfinance", "pandas"]
+        },
+        "test_market_data_connection.py": {
+            "status": "stable",
+            "description": "Market data connection testing suite",
+            "dependencies": ["market_data_hub.py"]
+        },
+        "test_realtime_data.py": {
+            "status": "stable",
+            "description": "Real-time data testing suite",
+            "dependencies": ["real_market_connector.py"]
+        }
+    },
+    "strategies": {
+        "enhanced_liquidity_sniper.py": {
+            "status": "stable",
+            "description": "Enhanced version of liquidity sniper with real market data",
+            "dependencies": ["market_data_hub.py", "ai_event_pool.py"]
+        },
+        "order_flow_monitor.py": {
+            "status": "stable",
+            "description": "Order flow analysis and monitoring",
+            "dependencies": ["market_data_hub.py"]
+        },
+        "liquidity_sniper.py": {
+            "status": "replace",
+            "description": "Original liquidity sniper (to be replaced by enhanced version)",
+            "dependencies": []
+        },
+        "strategy_prompt_engine.py": {
+            "status": "stable",
+            "description": "AI strategy generation engine",
+            "dependencies": ["deepseek_agent.py"]
+        },
+        "option_backtester.py": {
+            "status": "needs-update",
+            "description": "Options strategy backtesting engine",
+            "dependencies": ["pandas", "numpy"]
+        },
+        "starG.py": {
+            "status": "needs-update",
+            "description": "Star strategy implementation",
+            "dependencies": ["pandas", "numpy"]
+        },
+        "test_strategy_prompt.py": {
+            "status": "stable",
+            "description": "Strategy prompt testing suite",
+            "dependencies": ["strategy_prompt_engine.py"]
+        }
+    },
+    "ai_components": {
+        "ai_analyzer.py": {
+            "status": "stable",
+            "description": "AI-powered market analysis",
+            "dependencies": ["market_data_hub.py", "ai_event_pool.py"]
+        },
+        "ai_commander.py": {
+            "status": "needs-update",
+            "description": "Strategic AI control center",
+            "dependencies": ["ai_model_router.py", "ai_event_pool.py"]
+        },
+        "ai_model_router.py": {
+            "status": "stable",
+            "description": "AI model management and routing",
+            "dependencies": ["deepseek_agent.py"]
+        },
+        "ai_reporter.py": {
+            "status": "stable",
+            "description": "AI-powered reporting system",
+            "dependencies": ["ai_event_pool.py"]
+        },
+        "ai_self_improvement.py": {
+            "status": "needs-update",
+            "description": "AI self-learning and improvement",
+            "dependencies": ["ai_model_router.py"]
+        },
+        "ai_alert_factory.py": {
+            "status": "stable",
+            "description": "AI alert generation system",
+            "dependencies": ["ai_event_pool.py"]
+        },
+        "ai_event_pool.py": {
+            "status": "stable",
+            "description": "AI event management system",
+            "dependencies": []
+        },
+        "ai_intelligence_dispatcher.py": {
+            "status": "stable",
+            "description": "AI intelligence routing system",
+            "dependencies": ["ai_event_pool.py"]
+        },
+        "ai_analyst_v2.py": {
+            "status": "stable",
+            "description": "Advanced AI market analyst",
+            "dependencies": ["llm_prompt_builder.py"]
+        },
+        "ai_market_analyzer.py": {
+            "status": "stable",
+            "description": "Market analysis with DeepSeek integration",
+            "dependencies": ["deepseek_agent.py"]
+        },
+        "deepseek_agent.py": {
+            "status": "stable",
+            "description": "DeepSeek AI integration",
+            "dependencies": []
+        },
+        "llm_prompt_builder.py": {
+            "status": "stable",
+            "description": "LLM prompt construction utilities",
+            "dependencies": []
+        },
+        "run_ai_trading_system.py": {
+            "status": "stable",
+            "description": "AI trading system runner",
+            "dependencies": ["ai_commander.py", "market_data_hub.py"]
+        }
+    },
+    "notifications": {
+        "unified_notifier.py": {
+            "status": "stable",
+            "description": "Unified notification system",
+            "dependencies": ["telegram_bot.py", "voice_manager.py"]
+        },
+        "telegram_bot.py": {
+            "status": "stable",
+            "description": "Telegram notification integration",
+            "dependencies": ["python-telegram-bot"]
+        },
+        "voice_manager.py": {
+            "status": "needs-update",
+            "description": "Voice alert system",
+            "dependencies": ["pyttsx3"]
+        },
+        "test_telegram_unified.py": {
+            "status": "stable",
+            "description": "Unified telegram notification testing",
+            "dependencies": ["unified_notifier.py"]
+        }
+    },
+    "core": {
+        "hf_executor.py": {
+            "status": "stable",
+            "description": "High-frequency execution engine",
+            "dependencies": ["market_data_hub.py"]
+        },
+        "run_warmachine.py": {
+            "status": "stable",
+            "description": "Main system entry point",
+            "dependencies": ["all components"]
+        },
+        "run_realtime_monitor.py": {
+            "status": "stable",
+            "description": "Real-time system monitoring",
+            "dependencies": ["market_data_hub.py", "market_watcher.py"]
+        }
+    },
+    "monitoring": {
+        "market_watcher.py": {
+            "status": "stable",
+            "description": "Market monitoring system",
+            "dependencies": ["market_data_hub.py"]
+        },
+        "routine_scheduler.py": {
+            "status": "stable",
+            "description": "Task scheduling system",
+            "dependencies": []
+        }
+    },
+    "web": {
+        "web_dashboard.py": {
+            "status": "needs-update",
+            "description": "Web-based monitoring dashboard",
+            "dependencies": ["streamlit"]
+        },
+        "web_api.py": {
+            "status": "stable",
+            "description": "REST API interface",
+            "dependencies": ["fastapi"]
+        },
+        "webhook_server.py": {
+            "status": "stable",
+            "description": "Webhook handling server",
+            "dependencies": ["fastapi"]
+        }
+    },
+    "community": {
+        "community_manager.py": {
+            "status": "needs-update",
+            "description": "Community management system",
+            "dependencies": ["unified_notifier.py"]
+        }
+    },
+    "utils": {
+        "analyze_market_data.py": {
+            "status": "stable",
+            "description": "Market data analysis utilities",
+            "dependencies": ["pandas", "numpy"]
+        },
+        "verify_environment.py": {
+            "status": "stable",
+            "description": "Environment verification tool",
+            "dependencies": []
+        },
+        "fix_imghdr_and_encoding.py": {
+            "status": "stable",
+            "description": "Image handling fixes",
+            "dependencies": ["PIL"]
+        },
+        "preload_compatibility.py": {
+            "status": "stable",
+            "description": "System compatibility checks",
+            "dependencies": []
+        }
+    },
+    "upgrade_priorities": [
+        {
+            "module": "ai_commander.py",
+            "priority": "high",
+            "reason": "Core AI system needs optimization"
+        },
+        {
+            "module": "web_dashboard.py",
+            "priority": "medium",
+            "reason": "Dashboard needs modern UI update"
+        },
+        {
+            "module": "market_data_watcher.py",
+            "priority": "medium",
+            "reason": "Add support for more data sources"
+        },
+        {
+            "module": "voice_manager.py",
+            "priority": "low",
+            "reason": "Add more voice options and languages"
+        }
+    ],
+    "deprecated_modules": [
+        {
+            "module": "liquidity_sniper.py",
+            "replacement": "enhanced_liquidity_sniper.py",
+            "deadline": "2024-04-30"
+        }
+    ]
+} 

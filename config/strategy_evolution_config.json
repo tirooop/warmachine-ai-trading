@@ -1,0 +1,128 @@
+{
+    "strategy_evolution": {
+        "genes": {
+            "spread_ratio": {
+                "min": 0.001,
+                "max": 0.05,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "gamma_threshold": {
+                "min": 0.1,
+                "max": 0.5,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "iv_skew_sensitivity": {
+                "min": 0.1,
+                "max": 2.0,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "theta_decay_rate": {
+                "min": 0.1,
+                "max": 1.0,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "hedge_frequency": {
+                "min": 1,
+                "max": 24,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "max_position_size": {
+                "min": 0.1,
+                "max": 10.0,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "stop_loss_threshold": {
+                "min": 0.01,
+                "max": 0.1,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "take_profit_threshold": {
+                "min": 0.02,
+                "max": 0.2,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "volatility_lookback": {
+                "min": 5,
+                "max": 50,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            },
+            "correlation_threshold": {
+                "min": 0.1,
+                "max": 0.9,
+                "mutation_rate": 0.1,
+                "mutation_strength": 0.2
+            }
+        },
+        "evolution": {
+            "population_size": 100,
+            "generations": 100,
+            "survival_rate": 0.2,
+            "crossover_rate": 0.7,
+            "mutation_rate": 0.3,
+            "elitism": true
+        },
+        "evaluation": {
+            "metric_weights": {
+                "sharpe_ratio": 0.3,
+                "sortino_ratio": 0.2,
+                "max_drawdown": -0.2,
+                "win_rate": 0.15,
+                "profit_factor": 0.15
+            },
+            "risk_penalty": {
+                "max_drawdown_weight": 2.0,
+                "volatility_weight": 1.0
+            }
+        },
+        "validation": {
+            "min_trades": 10,
+            "min_win_rate": 0.4,
+            "max_drawdown_limit": 0.3,
+            "min_sharpe_ratio": 0.5
+        },
+        "market_data": {
+            "lookback_period": 252,
+            "train_test_split": 0.8,
+            "update_frequency": "1d"
+        },
+        "backtest": {
+            "scenarios": 50,
+            "timeframe": "1h",
+            "metrics": ["sharpe_ratio", "max_drawdown", "win_rate"]
+        },
+        "prediction_market": {
+            "token_address": "0x...",
+            "contract_address": "0x...",
+            "performance_fee": 800,
+            "min_stake": 100
+        }
+    },
+    "localization": {
+        "web": {
+            "language": "zh_CN",
+            "timezone": "Asia/Shanghai",
+            "date_format": "YYYY-MM-DD",
+            "time_format": "HH:mm:ss"
+        },
+        "telegram": {
+            "language": "zh_CN",
+            "commands": {
+                "start": "开始",
+                "help": "帮助",
+                "status": "状态",
+                "strategy": "策略",
+                "performance": "表现",
+                "settings": "设置"
+            }
+        }
+    }
+} 

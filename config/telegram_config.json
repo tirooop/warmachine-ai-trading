@@ -1,0 +1,43 @@
+{
+    "token": "YOUR_TELEGRAM_BOT_TOKEN",
+    "admin_chat_id": "YOUR_ADMIN_CHAT_ID",
+    "broadcast_channels": [
+        "CHANNEL_ID_1",
+        "CHANNEL_ID_2"
+    ],
+    "allowed_users": [
+        "USER_ID_1",
+        "USER_ID_2"
+    ],
+    "mcp_server_url": "http://localhost:8080",
+    "mcp_api_key": "YOUR_MCP_API_KEY",
+    "rate_limits": {
+        "messages_per_minute": 20,
+        "alerts_per_minute": 10
+    },
+    "retry_settings": {
+        "max_retries": 3,
+        "retry_delay": 1
+    },
+    "cooldown_periods": {
+        "INFO": 60,
+        "WARNING": 300,
+        "URGENT": 60,
+        "CRITICAL": 0
+    },
+    "trading": {
+        "default_exchange": "UVX",
+        "symbols": {
+            "UVX": {
+                "name": "UVX",
+                "type": "index",
+                "description": "UVX Index"
+            },
+            "NXP": {
+                "name": "NXP",
+                "type": "stock",
+                "description": "NXP Semiconductors"
+            }
+        }
+    }
+} 
